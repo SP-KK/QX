@@ -83,7 +83,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
     proxies: &C
       - DIRECT
-      - 手动切换
       - 自动选择
       - 故障转移
 
@@ -92,12 +91,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
     proxies: 
       *C
-
-  - name: 微软服务
-    type: select
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
-    proxies:
-      *G
       
   - name: AdBlock
     type: select
@@ -113,10 +106,10 @@ proxy-groups:
 
 rule-providers:
 
-  Adblock-Domain:
+  Adblock:
     type: http
     behavior: domain
-    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/AdvertisingLite/AdvertisingLite_Domain.yaml"
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Advertising/Advertising.yaml"
     path: ./ruleset/AdDomain.yaml
     interval: 86400
         
@@ -130,30 +123,21 @@ rule-providers:
   Global:
     type: http
     behavior: domain
-    url: "https://ghproxy.com/https://raw.githubusercontent.com/Loyalsoldier/clash-rules/release/proxy.txt"
+    url: "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Global/Global_Domain.txt"
     path: ./ruleset/Global-Domain.yaml
     interval: 86400
 
-  Lan:
+  China:
     type: http
     behavior: classical
-    url: "https://ghproxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Lan/Lan.yaml"
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml"
     path: ./ruleset/lan.yaml
     interval: 86400
     
 rules:
-  - RULE-SET,Adblock-Domain,AdBlock
-  - RULE-SET,YouTube,YouTube
-  - RULE-SET,Netflix,NETFLIX
-  - RULE-SET,Disney,Disney+
+  - RULE-SET,Adblock,AdBlock
   - RULE-SET,Apple,苹果服务
-  - RULE-SET,Microsoft,微软服务
-  - RULE-SET,NetEaseMusic,网易音乐
-  - RULE-SET,BiliBili,哔哩哔哩
-  - RULE-SET,Game,游戏平台
-  - RULE-SET,PackageName,国外网站
   - RULE-SET,Global,国外网站
   - RULE-SET,China,国内网站
-  - RULE-SET,Lan,DIRECT
   - GEOIP,CN,国内网站
   - MATCH,漏网之鱼
