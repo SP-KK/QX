@@ -122,9 +122,9 @@ rule-providers:
 
   Global:
     type: http
-    behavior: classical
+    behavior: domain
     url: "https://github.com/blackmatrix7/ios_rule_script/blob/master/rule/Clash/Global/Global_Domain.txt"
-    path: ./ruleset/Global.yaml
+    path: ./ruleset/Global-Domain.yaml
     interval: 86400
 
   China:
