@@ -140,7 +140,7 @@ rule-providers:
 rules:
   - RULE-SET,Adblock-Domain,AdBlock
   - RULE-SET,Apple,苹果服务
-  - RULE-SET,Global,国外网站
+  - RULE-SET, Global-Domain,国外网站
   - RULE-SET,China,国内网站
   - GEOIP,CN,国内网站
   - MATCH,漏网之鱼
