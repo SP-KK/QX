@@ -5,7 +5,7 @@ http:
   mitm:
     - "yimuapp.com"
   script:
-    - match: https?:\/\/yimuapp\.com(:8082)?\/(bookkeeping\/user\/getUser)
+    - match: https?:\/\/yimuapp\.com\/(bookkeeping\/user\/getUser)
       name: yimuapp
       type: response
       require-body: true
