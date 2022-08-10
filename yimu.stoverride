@@ -1,0 +1,17 @@
+name: yimuapp
+desc: yimuapp解锁VIP
+
+http:
+  mitm:
+    - "yimuapp.com"
+  script:
+    - match: ^https?:\/\/yimuapp\.com(:8082)?\/(bookkeeping\/user\/getUser)
+      name: yimuapp
+      type: response
+      require-body: true
+      timeout: 10
+      
+script-providers:
+  caiyun:
+    url: https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/YiMuJiZhang.js
+    interval: 86400
