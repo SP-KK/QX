@@ -59,13 +59,13 @@ dl.l.google.com = server:119.29.29.29
 # 新加坡(用于Telegram）
 SG = url-test,新加坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 # 大陆服务
-大陆服务 = select,direct,优选节点,Final, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
+大陆服务 = select,DIRECT,FINAL, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
 # 海外服务
-海外服务 = select,优选节点,优选SG,Final,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
+海外服务 = select,优选节点,FINAL,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
 # Advertising策略-去广告
 去广告 = select,REJECT,img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/AdBlock.png
 # FINAL
-FINAL = select,优选节点,优选SG,Proxy,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+FI NAL = select,优选节点,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
 
 [Remote Filter]
 香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
