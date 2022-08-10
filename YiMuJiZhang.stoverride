@@ -1,17 +1,16 @@
 name: 一木记账
-desc: 一木记账解锁VIP
+desc: 一木记账解锁会员
 
 http:
   mitm:
     - "yimuapp.com"
   script:
-    - match: https?:\/\/yimuapp\.com\/(bookkeeping\/user\/getUser)
-      name: yimuapp
+    - match: ^https?:\/\/yimuapp\.com(:8082)?\/bookkeeping\/user\/getUser\/
+      name: YMJZ
       type: response
       require-body: true
       timeout: 10
-      
 script-providers:
-  yimuapp:
+  YMJZ:
     url: https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/YiMuJiZhang.js
     interval: 86400
