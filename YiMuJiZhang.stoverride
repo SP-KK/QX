@@ -1,5 +1,5 @@
-name: yimuapp
-desc: yimuapp解锁VIP
+name: 一木记账
+desc: 一木记账解锁VIP
 
 http:
   mitm:
