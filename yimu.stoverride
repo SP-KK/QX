@@ -3,7 +3,7 @@ desc: yimuapp解锁订阅
 
 http:
   script:
-    - match: ^https?:\/\/yimuapp\.com(:8082)?\/(bookkeeping\/user\/getUser)\/
+    - match: ^https?:\/\/yimuapp\.com(:8082)?\/bookkeeping\/user\/getUser\/
       name: yimuapp
       type: response
       require-body: true
