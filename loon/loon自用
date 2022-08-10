@@ -5,9 +5,6 @@
 # 点击配置-证书管理-生成新的CA证书，之后进入「设置」>「通用」>「描述文件」, 安装Loon的证书, 并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对Loon证书的信任。
 # 开启并更新脚本和插件。
 
-# 全分组
-# 去广告插件, VIP脚本, 签到, cookie,
-
 [General]
 # IPv6 支持
 ipv6 = false
@@ -71,15 +68,9 @@ dl.l.google.com = server:119.29.29.29
 # 海外服务
 海外服务 = select,优选节点,优选SG,Final,img-url = https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png
 # Advertising策略-去广告
-Advertising = select,DIRECT,REJECT,img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/AdBlock.png
+去广告 = select,REJECT,img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/AdBlock.png
 # FINAL
 FINAL = select,优选节点,优选SG,Proxy,DIRECT,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
-
-
-
-
-
-
 
 [Remote Filter]
 香港 = NameRegex, FilterKey = "(?i)(港|HK|Hong)"
@@ -88,22 +79,13 @@ FINAL = select,优选节点,优选SG,Proxy,DIRECT,img-url = https://raw.githubus
 韩国 = NameRegex, FilterKey = "(?i)(KR|Korea|KOR|首尔|韩|韓)"
 美国 = NameRegex, FilterKey = "(?i)(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States)"
 新加坡 = NameRegex, FilterKey = "(?i)(新加坡|坡|狮城|SG|Singapore)"
-网易解锁 = NameRegex, FilterKey = "(?i)(unblock|music|Music|云音乐|🎧)"
 
 [Remote Rule]
-https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Guard/Advertising.list, policy=REJECT, tag=去广告,enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=节点选择, tag=TestFlight, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Apple/Apple.list, policy=苹果服务, tag=苹果服务, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/NetEaseMusic/NetEaseMusic.list, policy=网易音乐, tag=网易音乐, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/YouTube/YouTube.list, policy=油管视频, tag=油管视频, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Netflix/Netflix.list, policy=奈飞视频, tag=奈飞视频, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Bahamut/Bahamut.list, policy=巴哈姆特, tag=巴哈姆特, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/GlobalMedia/GlobalMedia.list, policy=节点选择, tag=国外媒体, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/BiliBili/BiliBili.list, policy=港台番剧, tag=国内媒体, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list, policy=电报消息, tag=电报消息, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy.list, policy=节点选择, tag=全球规则, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Proxy/Proxy_Domain.list, policy=节点选择, tag=全球规则,enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list, policy=DIRECT, tag=全球直连, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/AdvertisingLite/AdvertisingLite.list, policy=去广告, tag=去广告,enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/TestFlight/TestFlight.list, policy=优选节点, tag=TestFlight, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Global/Global.list, policy=海外服务, tag=海外服务, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/China/China.list, policy=大陆服务, tag=大陆服务, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Loon/Telegram/Telegram.list, policy=优选SG, tag=Telegram, enabled=true
 
 [Rule]
 GEOIP,CN,DIRECT
@@ -127,11 +109,10 @@ https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Script.conf, t
 https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/JD.conf, tag=JD, enabled=false
 
 [Plugin]
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/MediaCheck.plugin, tag=Node Detection Tool, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/Unlock/TikTokJP.plugin, proxy=日本节点, tag=Tiktok, enabled=true
-https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Advertising/Advertising.plugin, tag=Advertising, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AdvertisingLite/AdvertisingLite.plugin, tag=去广告, enabled=true
+https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/AllInOne/AllInOne.plugin, tag=AllInOne, enabled=true
 https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rewrite/Loon/Redirect/Redirect.plugin, tag=General, enabled=true
-https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF-Download, enabled=true
+https://raw.githubusercontent.com/Tartarus2014/Loon-Script/master/Plugin/TF-Download.plugin, tag=TF, enabled=true
 https://raw.githubusercontent.com/chavyleung/scripts/master/box/rewrite/boxjs.rewrite.loon.plugin, enabled=true
 https://raw.githubusercontent.com/Peng-YM/Sub-Store/master/config/Loon.plugin, tag=订阅解析器, enabled=false
 
