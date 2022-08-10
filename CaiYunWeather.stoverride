@@ -1,0 +1,17 @@
+name: 彩云天气SVIP
+desc: 解锁SVIP
+
+http:
+  mitm:
+    - "biz.caiyunapp.com"
+  script:
+    - match: ^https:\/\/biz\.caiyunapp\.com\/v2\/user.+
+      name: caiyun
+      type: response
+      require-body: true
+      timeout: 10
+      
+script-providers:
+  caiyun:
+    url: https://gjds.vip/QX/pojie/cytq.js
+    interval: 86400
