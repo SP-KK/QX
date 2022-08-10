@@ -55,9 +55,9 @@ dl.l.google.com = server:119.29.29.29
 
 [Proxy Group]
 # 自动选择最优节点
-优选节点 = url-test,Proxy,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Auto.png
+优选节点 = url-test,香港,台湾,日本,韩国,美国,新加坡,url = http://www.gstatic.com/generate_204,interval = 600,img-url = https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Auto.png
 # 新加坡(用于Telegram）
-SG = select,新加坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+SG = url-test,新加坡,img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
 # 大陆服务
 大陆服务 = select,direct,优选节点,Final, img-url = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
 # 海外服务
