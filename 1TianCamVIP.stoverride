@@ -5,7 +5,7 @@ http:
   mitm:
     - "m2u-api.getkwai.com"
   script:
-    - match: ^https?:\/\/m2u-api\.getkwai\.com\/api-server\/api\/v2\/vip\/vipUserInfo
+    - match: ^https?:\/\/m2u-api\.getkwai\.com\/(api-server\/api\/v2\/vip\/vipUserInfo)
       name: 1TianCam
       type: response
       require-body: true
