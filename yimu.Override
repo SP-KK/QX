@@ -2,16 +2,17 @@ name: yimuapp
 desc: yimuapp解锁订阅
 
 http:
-  mitm:
-    - "yimuapp.com"
   script:
-    - match: ^https?:\/\/yimuapp\.com(:8082)?\/bookkeeping\/user\/getUser
+    - match: ^https?:\/\/yimuapp\.com(:8082)?\/bookkeeping\/user\/getUser\/
       name: yimuapp
       type: response
       require-body: true
       timeout: 10
       
+     mitm:
+    - "yimuapp.com"
+    
 script-providers:
   yimuapp:
     url: https://raw.githubusercontent.com/I-am-R-E/QuantumultX/main/JavaScript/YiMuJiZhang.js
-    interval:  86400
+    interval: 86400
