@@ -72,14 +72,36 @@ http:
 
 script-providers:
   KuWoMusic1:
-    url: https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kwyyxz.js
+    url: https://github.com/ddgksf2013/Cuttlefish/raw/master/Script/kwyy.js
     interval: 86400
   KuWoMusic2:
-    url: https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kwyy.js
+    url: https://github.com/ddgksf2013/Cuttlefish/raw/master/Script/kwyy.js
     interval: 86400
   KuWoMusic3:
-    url: https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kwyy.js
+    url: https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/kwyy.js
     interval: 86400
   KuWoMusic4:
-    url: https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kwyyszzj.js
+    url: https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/kwyy.js
     interval: 86400
+  KuWoMusic5:
+    url: https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/kwyy.js
+    interval: 86400
+  KuWoMusic6:
+    url: https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/kwyy.js
+    interval: 86400
+  KuWoMusic7:
+    url: https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/kwyy.js
+    interval: 86400
+  KuWoMusic8:
+    url: https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/kwyy.js
+    interval: 86400
+  KuWoMusic9:
+    url: https://github.com/ddgksf2013/Cuttlefish/raw/master/Crack/kuwodl.js
+    interval: 86400
+  KuWoMusic10:
+    url: https://raw.githubusercontent.com/ddgksf2013/Cuttlefish/master/Script/kwyy.js
+    interval: 86400
+  KuWoMusic11:
+    url: https://github.com/ddgksf2013/Cuttlefish/raw/master/Crack/kuwodl.js
+    interval: 86400
+    
