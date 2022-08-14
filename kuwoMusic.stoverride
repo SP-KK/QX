@@ -1,30 +1,75 @@
 name: 酷我音乐
-desc: 解锁酷我音乐会员、听书、下载权限,可下载无损! By Nameking77
+desc: 解锁酷我音乐会员、听书、下载权限,可下载无损!
 http:
   mitm:
-    - '*.kuwo.cn'
-    - '*.lrts.me'
+    - '*kuwo*'
+    - '*lrts*'
+    - 'rich.kuwo.cn'
+    - '*.kwcdn.kuwo.cn'
+    - 'mobilead.kuwo.cn'
+    - 'musicpay.kuwo.cn'
+    - 'vip1.kuwo.cn'
+    - 'audiobookpay.kuwo.cn'
+    - 'tingshu.kuwo.cn'
+    - 'omp-audiobookpay.lrts.me'
+    
   script:
-    - match: ^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?.+$
+    - match: ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui)
       name: KuWoMusic1
       type: request
-      require-body: false
+      require-body: true
       timeout: 10
-    - match: ^http://(.+).(lrts|kuwo).(me|cn)(/v2/api/user/info|/a.p|/vip/v2/user/vip)
+    - match: ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use)
       name: KuWoMusic2
       type: response
       require-body: true
       timeout: 10
-    - match: ^http://vip1.kuwo.cn/vip/enc/user/vip.+$
+    - match: https?:\/\/omp-audiobookpay\.lrts\.me\/a\.p$
       name: KuWoMusic3
       type: response
       require-body: true
       timeout: 10
-    - match: ^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?newver.+$
+    - match: ^https?:\/\/audiobookpay\.kuwo\.cn/a\.p
       name: KuWoMusic4
       type: response
       require-body: true
       timeout: 10
+    - match: https://tingshu.kuwo.cn/v2/api/user/info
+      name: KuWoMusic5
+      type: response
+      require-body: true
+      timeout: 10
+    - match: https?:\/\/audiobooks\.kuwo\.cn\/v2\/api\/user\/info
+      name: KuWoMusic6
+      type: response
+      require-body: true
+      timeout: 10
+    - match: https?:\/\/tingshu\.kuwo\.cn\/v2\/api\/pay\/vip\/extraVipStatus
+      name: KuWoMusic7
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/theme
+      name: KuWoMusic8
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https?:\/\/musicpay\.kuwo\.cn\/music\.pay\?newver=\d$
+      name: KuWoMusic9
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https?:\/\/vip1\.kuwo\.cn\/(vip\/v2\/user\/vip|vip\/spi/mservice)
+      name: KuWoMusic10
+      type: response
+      require-body: true
+      timeout: 10
+    - match: ^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/
+      name: KuWoMusic11
+      type: request
+      require-body: true
+      timeout: 10
+
 script-providers:
   KuWoMusic1:
     url: https://raw.githubusercontent.com/nameking77/Qx/main/rewrite/kwyyxz.js
