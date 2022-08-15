@@ -17,7 +17,7 @@ http:
     - match: ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui)
       name: 酷我音乐1
       type: request
-      require-body: 0
+      require-body: true
       timeout: 10
     - match: ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ne|\/a\.p|v\d\/api\/(user\/in|pay\/vi)|\w{3}\/v\d\/user\/vi|\w{3}\/spi\/ms|\w{3}\/v\d\/the|\w{3}\/enc\/use)
       name: 酷我音乐2
