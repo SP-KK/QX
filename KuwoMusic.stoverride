@@ -3,16 +3,16 @@ desc: 解锁酷我音乐会员、听书、下载权限,可下载无损!
 
 http:
   mitm:
-    - '*kuwo*'
-    - '*lrts*'
-    - 'rich.kuwo.cn'
-    - '*.kwcdn.kuwo.cn'
-    - 'mobilead.kuwo.cn'
-    - 'musicpay.kuwo.cn'
-    - 'vip1.kuwo.cn'
-    - 'audiobookpay.kuwo.cn'
-    - 'tingshu.kuwo.cn'
-    - 'omp-audiobookpay.lrts.me'
+    - "*kuwo*"
+    - "*lrts*"
+    - "rich.kuwo.cn"
+    - "*.kwcdn.kuwo.cn"
+    - "mobilead.kuwo.cn"
+    - "musicpay.kuwo.cn"
+    - "vip1.kuwo.cn'
+    - "audiobookpay.kuwo.cn"
+    - "tingshu.kuwo.cn"
+    - "omp-audiobookpay.lrts.me"
     
   script:
     - match: ^https?:\/\/.*(kuwo|lrts).*(music\.pay\?ui)
