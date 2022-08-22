@@ -14,7 +14,7 @@ subscribe-url: 订阅
 proxy-providers:
   All:
     type: http
-    url: "订阅链接"
+    url: 订阅链接
     # 以下方法任选其一⚠️有Clash订阅优先使用方法二❗️
     # 1.可以使用任意类型的链接仅替换上面文字，多个链接使用英文符号的竖杠|隔开一起写上即可
     # 2.Sub-Store与Clash类型订阅链接替换掉整个引号""内的链接
@@ -56,12 +56,40 @@ proxies:
             
 proxy-groups:
 
-  - name: 自动选择
+  - name: HK
     type: url-test
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
     use: 
        - All
-    url: "http://www.gstatic.com/generate_204"
+    filter: (?=.*(港|🇭🇰|HK|(?i)Hong))^((?!(台|日|韩|新|美)).)*$
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    
+  - name: SG
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+    use: 
+       - All
+    filter: (?=.*(新|狮|獅|SG|(?i)Singapore))^((?!(港|台|日|韩|美)).)*$
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    
+  - name: US
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+    use: 
+       - All
+    filter: (?=.*(美|🇺🇸|US|(?i)States|American))^((?!(港|台|日|韩|新)).)*$
+    url: 'http://www.gstatic.com/generate_204'
+    interval: 300
+    
+  - name: TW
+    type: url-test
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+    use: 
+       - All
+    filter: (?=.*(台|🇨🇳|🇹🇼|TW|(?i)Taiwan))^((?!(港|日|韩|新|美)).)*$
+    url: 'http://www.gstatic.com/generate_204'
     interval: 300
     
   - name: 故障转移
@@ -76,7 +104,10 @@ proxy-groups:
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Global.png
     proxies: &G
-      - 自动选择
+      - HK
+      - SG
+      - TW
+      - US
       - 故障转移
 
   - name: 国内网站
@@ -84,27 +115,45 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png
     proxies: &C
       - DIRECT
-      - 自动选择
+      - HK
+      - US
       - 故障转移
+      
+- name: Telegram
+  type: select
+  proxies: 
+  - HK
+  - US
+  - TW
+  - SG
+  - 故障转移
+  icon: https://raw.githubusercontent.com/erdongchanyo/icon/main/Policy-Filter/Telegram.png
 
   - name: 苹果服务
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
     proxies: 
-      *C
+      - DIRECT
+      - c
+      - US
+      - 故障转移
+      - REJECT
       
   - name: AdBlock
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png
     proxies:
       - REJECT
+      - DIRECT
+      - HK
       
   - name: 漏网之鱼
     type: select
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
     proxies:
-      *G
-
+      - HK
+      - DIRECT
+      
 rule-providers:
 
   Adblock-Domain:
@@ -140,6 +189,7 @@ rule-providers:
 rules:
   - RULE-SET,Adblock-Domain,AdBlock
   - RULE-SET,Apple,苹果服务
+  - RULE-SET,Telegram,Telegram
   - RULE-SET,Global-Domain,国外网站
   - RULE-SET,China,国内网站
   - GEOIP,CN,国内网站
