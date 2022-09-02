@@ -13,5 +13,5 @@ http:
       
 script-providers:
 youdao:
-    url: https://raw.githubusercontent.com/Alex0510/Eric/master/surge/Script/ydybj.js
+    url: https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/ydybj.js
     interval: 86400
